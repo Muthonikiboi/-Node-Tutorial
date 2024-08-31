@@ -49,3 +49,40 @@ count
 .catch(function error(result){
     console.log(result)
 })
+
+
+
+//ASYNC/AWAIT
+//Simple Async function
+async function first() {
+    console.log('First Async Function')
+    return Promise.resolve(1)
+}
+first().then(function(result){
+    console.log(result)
+})
+
+//Await Keyword
+let promise= new Promise(function(resolve,reject){
+    setTimeout(function(){
+        resolve('promise resolved'),4000
+    })
+})
+async function asyncFunc() {
+    let result= await promise;
+    console.log(result);
+    console.log("Testing")
+}
+asyncFunc();
+
+//Using Try/Catch(Error Handling)
+async function asyncFunct() {
+    try{
+        let result= await promise;
+        console.log(result);
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+asyncFunct();
