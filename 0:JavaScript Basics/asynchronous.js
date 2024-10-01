@@ -3,7 +3,7 @@ const greetings = setTimeout(()=>{
     console.log("Hello World")
 },3000)
 
-console.log("This message displays first");
+console.log("This message displays first")
 
 
 
