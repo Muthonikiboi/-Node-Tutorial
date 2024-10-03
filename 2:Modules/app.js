@@ -1,5 +1,4 @@
 const fs = require('fs');
-console.log("Starting Operations .......");
 
 //using 
 fs.readFile("data.txt",(error, data)=>{//callback function receiving two parameters;
@@ -17,3 +16,17 @@ const textData = fs.readFileSync("data.txt","utf-8");//utf-8 is used to converst
 //You can use .toString() in place if utf-8.(((textData.toString())))
 console.log("File Content Second code: ", textData);
 //fs-allows you to work with the file system in your computer
+
+//Write contents into a file
+fs.writeFileSync("SyncWriting.txt", "Hey let's write into file using fileSync.");
+
+fs.writeFile("AsyncWriting.txt", "Hey let's write into file using asyncWrite.",(err)=>{
+    if(err){
+        console.error("Error writing to file: ", err);
+    }else{
+        console.log("File written successfully 🎉🎉🎉.");
+    }
+});
+
+//FS Promise Module...
+
