@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^4.1.0",
     "fs": "0.0.1-security",
+    "uuid": "^10.0.0",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
