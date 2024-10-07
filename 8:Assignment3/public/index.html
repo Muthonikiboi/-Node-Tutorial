@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <h1 style="margin-left: 700px">Product Page</h1>
+        <select name="" id="" class="admin">
+          <option selected>ADMIN OPTIONS</option>
+          <option value="view" id="showAddFormBtn">Add Product</option>
+          <option value="edit" id="showUpdateFormBtn">Update Products</option>
+          <option value="delete" id="showDeleteFormBtn">Delete Product</option>
+        </select>
+
+        <!-- Form to add new product -->
+        <div id="addProductForm" class="modal">
+          <div class="modal-content">
+            <h3>Add New Product</h3>
+            <label for="productImageUrl">Image URL:</label>
+            <input type="text" id="productImageUrl" name="imageUrl" required />
+            <label for="productTitle">Title:</label>
+            <input type="text" id="productTitle" name="title" required />
+            <label for="productPrice">Price:</label>
+            <input type="number" id="productPrice" name="price" required />
+            <label for="productDate">Date:</label>
+            <input type="text" id="productDate" name="date" required />
+            <label for="productLocation">Location:</label>
+            <input type="text" id="productLocation" name="location" required />
+            <label for="productCompany">Company:</label>
+            <input type="text" id="productCompany" name="company" required />
+            <button type="submit" id="confirmAddProductBtn">Submit</button>
+          </div>
+        </div>
+
+        <!-- Form to update existing product -->
+        <div id="updateProductForm" class="modal">
+          <div class="modal-content">
+            <h3>Update Product</h3>
+            <label for="productIdToUpdate">Product ID:</label>
+            <input type="text" id="productIdToUpdate" name="productId" required/>
+
+            <label for="updateProductImageUrl">Image URL:</label>
+            <input type="text" id="updateProductImageUrl" name="imageUrl" />
+
+            <label for="updateProductTitle">Title:</label>
+            <input type="text" id="updateProductTitle" name="title" />
+
+            <label for="updateProductPrice">Price:</label>
+            <input type="number" id="updateProductPrice" name="price" />
+
+            <label for="updateProductDate">Date:</label>
+            <input type="text" id="updateProductDate" name="date" />
+
+            <label for="updateProductLocation">Location:</label>
+            <input type="text" id="updateProductLocation" name="location" />
+
+            <label for="updateProductCompany">Company:</label>
+            <input type="text" id="updateProductCompany" name="company" />
+
+            <button type="submit">Update</button>
+          </div>
+        </div>
+
+        <div id="deleteProductForm" class="modal">
+          <div class="modal-content">
+            <h3>Delete Product</h3>
+            <label for="productIdToDelete">Product ID:</label>
+            <input
+              type="text"
+              id="productIdToDelete"
+              name="productId"
+              required
+            />
+            <button type="submit">Delete</button>
+          </div>
+        </div>
+      </div>
+      <label>Filter by Price:</label>
+      <select id="priceFilter">
+        <option value="all">All</option>
+        <option value="low">Below 25</option>
+        <option value="high">Above 25</option>
+      </select>
+      <div class="sort-options">
+        <button id="sort-price-asc">Sort by Price (Asc)</button>
+        <button id="sort-price-desc">Sort by Price (Desc)</button>
+        <button id="sort-date-asc">Sort by Date (Asc)</button>
+        <button id="sort-date-desc">Sort by Date (Desc)</button>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div class="container" id="container"></div>
+        <div style="background-color: lightgray; width: 20%">
+          <h2>Cart Items</h2>
+          <div class="cartDiv" id="cartDiv"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="script.js"></script>
+</html>
